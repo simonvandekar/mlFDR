@@ -1,0 +1,20 @@
+Package: mlFDR
+Type: Package
+Title: Semiparametric maximum likelihood estimation of false discovery rate
+Version: 0.1.0
+Author: person("Simon", "Vandekar", email="simon.vandekar@vanderbilt.edu", role=c('aut', 'cre'))
+Maintainer: person("Simon", "Vandekar", email="simon.vandekar@vanderbilt.edu", role=c('aut', 'cre'))
+Description: Tools to control the false discovery rate. The null can be estimated semiparametrically. The proportion of true nulls is estimate conditional on the null and marginal distributions using maximum likelihood.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.4)
+Collate:
+  'paraFDR.R'
+  'bootFDR.R'
+Imports:
+  logspline
+RoxygenNote: 6.1.0.9000
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
