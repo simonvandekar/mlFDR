@@ -28,7 +28,7 @@ bootFDR = function(y, statfun = function(y, ...){
   n = nrow(y)
   
   # compute observed data values
-  z = statfun(y)
+  z = statfun(y, ...)
   
   # bootstrap null estimation
   z0b = replicate(nboot, {z0 = statfun(y[sample(n, replace=TRUE),], ...);
