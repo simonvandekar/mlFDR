@@ -11,6 +11,7 @@ Depends: R (>= 3.3)
 Collate:
   'paraFDR.R'
   'bootFDR.R'
+  'pi0est.R'
 Imports:
   logspline
 RoxygenNote: 6.1.0.9000

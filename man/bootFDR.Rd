@@ -5,7 +5,7 @@
 \title{Computes FDR adjusted p-values using a semiparametric bootstrap}
 \usage{
 bootFDR(y, statfun = function(y) {     out = list(mean = colMeans(y), sd
-  = apply(y, 2, sd)) }, nboot = 10, ...)
+  = apply(y, 2, sd)) }, nboot = 10)
 }
 \arguments{
 \item{y}{An nXm matrix of data}
@@ -13,8 +13,6 @@ bootFDR(y, statfun = function(y) {     out = list(mean = colMeans(y), sd
 \item{statfun}{A function used to compute test statistics from y. Defaults to one sample t-statistic.}
 
 \item{nboot}{Number of bootstrap sample used to estimate null distribution.}
-
-\item{...}{Arguments to pass to statfun.}
 
 \item{formred}{formula or character that can be coerced to a formula or a
 design matrix for reduced model. If robust=TRUE then this must have one less
@@ -24,6 +22,8 @@ column than X.}
 
 \item{data}{R data frame containing variables in form. If form and formred
 are matrices then this can be NULL.}
+
+\item{...}{Arguments to pass to statfun.}
 }
 \value{
 Returns a list with the following values:
