@@ -23,17 +23,17 @@
 bootFDR = function(y, statfun = function(y){
   out = list('mean'=colMeans(y), 'sd'=apply(y, 2, sd) )
   },
-  nboot=10, ...){
+  nboot=10){
   # sample size
   n = nrow(y)
   # number of tests
   m = ncol(y)
   
   # compute observed data values
-  z = statfun(y, ...)
+  z = statfun(y)
   
   # bootstrap null estimation
-  z0b = replicate(nboot, {z0 = statfun(y[sample(n, replace=TRUE),], ...);
+  z0b = replicate(nboot, {z0 = statfun(y[sample(n, replace=TRUE),]);
                           z0 = (z0$mean - z$mean)/z0$sd;
                           z0} )
   z = z$mean/z$sd
