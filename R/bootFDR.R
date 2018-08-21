@@ -33,7 +33,7 @@ bootFDR = function(y, x, statfun = function(y, ...){
   # bootstrap null estimation
   z0b = replicate(nboot, {samp = sample(n, replace=TRUE);
                           z0 = statfun(y[samp,], x[samp]);
-                          z0 = (z0$mean - z$mean)/z0$sd/sqrt(2);
+                          z0 = (z0$mean - z$mean)/z0$sd;
                           z0} )
   z = z$mean/z$sd
   
